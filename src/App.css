@@ -2,3 +2,24 @@
   text-align: center;
 }
 
+#main-panel{
+  border: 1px black solid;
+  padding: 1rem;
+  display: flex;
+}
+
+#left-panel{
+  border: 1px black solid;
+  padding: 1rem;
+  width: 30%;
+}
+
+#right-panel{
+  border: 1px black solid;
+  padding: 1rem;
+  width: 70%;
+  margin-left: 1rem;
+}
+
+
+
