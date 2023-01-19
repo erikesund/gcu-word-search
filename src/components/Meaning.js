@@ -1,14 +1,14 @@
 import React from "react";
-import Defintion from "./Definition";
+import Definition from "./Definition";
 
 function Meaning({meaning}) {
 
-  const definitionNodes = meaning.definitions.map((definition) => {
-    return <Defintion definition={definition}/>
+  const definitionNodes = meaning.definitions.map((definition, index) => {
+    return <Definition definition={definition} key={index}/>
   });
 
   return(
-    <div>{meaning.partOfSpeech} {definitionNodes}</div>
+    <div id="meaning-panel"><em>{meaning.partOfSpeech}</em> {definitionNodes}</div>
   )
 };
 

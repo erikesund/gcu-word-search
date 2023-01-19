@@ -1,9 +1,12 @@
 import React from "react";
 
-function Defintion({definition}) {
+function Definition({definition}) {
   return (
-    <div>{definition.definition}</div>
+    <div id="definition-panel">
+      <p id="definition-text">{definition.definition}</p>
+      <p id="example-text">{definition.example}</p>
+    </div>
   )
 }
 
-export default Defintion;
+export default Definition;

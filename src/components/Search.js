@@ -12,12 +12,12 @@ function Search({setSearchTerm, onClick}) {
   };
 
   return (
-    <div>
+    <div id="search-panel">
+      <h3>Look Up A Word</h3>
       <form>
         <input onChange={handleChange}></input>
         <button onClick={handleSearchClick}>Search</button>
       </form>
-      <hr/>
     </div>
   )
 };

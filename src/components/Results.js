@@ -3,14 +3,14 @@ import Word from "./Word";
 
 function Results ({results, addFavourite}) {
   if( results !== null) {
-    var resultNodes = results.map((result) => {
-      return <Word word={result}/>
+    var resultNodes = results.map((result, index) => {
+      return <Word word={result} key={index}/>
     }) 
   };
 
-  if (results === null) {
+  if (results === null || results === undefined) {
     return (
-      <div>No Result</div>
+      <div></div>
     )} else {
       return (
         <div id="results-main">
