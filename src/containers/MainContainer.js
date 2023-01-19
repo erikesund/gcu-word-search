@@ -27,8 +27,11 @@ function MainContainer () {
 
   function addFavourite() {
     let favouritedWordsCopy = [...favouritedWords];
-    favouritedWordsCopy.push(results[0].word)
-    setFavouritedWord(favouritedWordsCopy)
+    const isDuplicate = favouritedWords.includes(results[0].word)
+    if(!isDuplicate) {
+      favouritedWordsCopy.push(results[0].word)
+      setFavouritedWord(favouritedWordsCopy)
+    }
   }
 
   return (
