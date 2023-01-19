@@ -1,7 +1,7 @@
 import React from "react";
 
-function Result () {
-  return (
+function Result() {
+  return(
     <div>Result</div>
   )
 }

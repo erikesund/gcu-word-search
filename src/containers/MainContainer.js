@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import FavouriteWord from "../components/FavouriteWord";
-import Result from "../components/Result";
+import Results from "../components/Results";
 import Search from "../components/Search";
 
 function MainContainer () {
@@ -23,7 +23,7 @@ function MainContainer () {
         <FavouriteWord/>
       </div>
       <div id="right-panel">
-        <Result/>
+        <Results result={result}/>
       </div>
     </div>
   )
