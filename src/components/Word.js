@@ -9,6 +9,6 @@ function Word({word}) {
     return (
         <div>{word.word} {meaningsNodes}</div>
       )
-    }
+    };
       
 export default Word;

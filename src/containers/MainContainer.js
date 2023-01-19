@@ -4,7 +4,6 @@ import Results from "../components/Results";
 import Search from "../components/Search";
 
 function MainContainer () {
-
   const[searchTerm, setSearchTerm] = useState("");
   const[results, setResults] = useState(null);
   const[favouritedWords, setFavouritedWord] = useState(() => {
@@ -15,23 +14,23 @@ function MainContainer () {
 
   useEffect(() => {
     localStorage.setItem("favouritedWords", JSON.stringify(favouritedWords))
-  }, [favouritedWords])
+  }, [favouritedWords]);
 
   async function getDefinition(){
     const url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchTerm;
     const response = await fetch(url);
     const data = await response.json();
-    setResults(data)
-  }
+    setResults(data);
+  };
 
   function addFavourite() {
     let favouritedWordsCopy = [...favouritedWords];
-    const isDuplicate = favouritedWords.includes(results[0].word)
+    const isDuplicate = favouritedWords.includes(results[0].word);
     if(!isDuplicate) {
-      favouritedWordsCopy.push(results[0].word)
-      setFavouritedWord(favouritedWordsCopy)
-    }
-  }
+      favouritedWordsCopy.push(results[0].word);
+      setFavouritedWord(favouritedWordsCopy);
+    };
+  };
 
   return (
     <div id="main-panel">

@@ -9,7 +9,6 @@ function Search({setSearchTerm, onClick}) {
   function handleSearchClick(e) {
     onClick();
     e.preventDefault();
-    e.target.value = ""
   };
 
   return (
@@ -21,6 +20,6 @@ function Search({setSearchTerm, onClick}) {
       <hr/>
     </div>
   )
-}
+};
 
 export default Search;

@@ -3,7 +3,7 @@ import React from "react";
 function FavouriteWord({favouritedWords}) {
   const favouritedNodes = favouritedWords.map((word) => {
     return <p>{word}</p>
-  })
+  });
 
   return (
     <div>
@@ -11,7 +11,6 @@ function FavouriteWord({favouritedWords}) {
       {favouritedNodes}
       </div>
   )
-}
+};
 
 export default FavouriteWord;
-

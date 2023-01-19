@@ -6,7 +6,7 @@ function Results ({results, addFavourite}) {
     var resultNodes = results.map((result) => {
       return <Word word={result}/>
     }) 
-  }
+  };
 
   if (results === null) {
     return (
@@ -18,8 +18,7 @@ function Results ({results, addFavourite}) {
           <button onClick={addFavourite}>Save Word</button>
         </div>
       )
-    }
-}
-
+    };
+};
 
 export default Results;
