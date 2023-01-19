@@ -22,6 +22,13 @@ function MainContainer () {
     const response = await fetch(url);
     const data = await response.json();
     setResults(data)
+    setSearchTerm("")
+  }
+
+  function addFavourite() {
+    const favouritedWordsCopy = [...favouritedWords];
+    favouritedWordsCopy.push(results[0].word)
+    setFavouritedWord(favouritedWordsCopy)
   }
 
   return (
@@ -31,7 +38,7 @@ function MainContainer () {
         <FavouriteWord/>
       </div>
       <div id="right-panel">
-        <Results results={results}/>
+        <Results results={results} addFavourite={addFavourite}/>
       </div>
     </div>
   )

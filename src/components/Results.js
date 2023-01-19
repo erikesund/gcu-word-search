@@ -1,7 +1,7 @@
 import React from "react";
 import Word from "./Word";
 
-function Results ({results}) {
+function Results ({results, addFavourite}) {
   if( results !== null) {
     var resultNodes = results.map((result) => {
       return <Word word={result}/>
@@ -15,6 +15,7 @@ function Results ({results}) {
       return (
         <div id="results-main">
           {resultNodes}
+          <button onClick={addFavourite}>Save Word</button>
         </div>
       )
     }

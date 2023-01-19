@@ -7,7 +7,7 @@ function Word({word}) {
     })
 
     return (
-      <div>{word.word} {meaningsNodes}</div>
+        <div>{word.word} {meaningsNodes}</div>
       )
     }
       
