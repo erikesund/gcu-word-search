@@ -1,10 +1,15 @@
 import React from "react";
 
-function Search() {
+function Search({setSearchTerm, onClick}) {
+
+  const handleChange = e => {
+    setSearchTerm(e.target.value)
+  }
+
   return (
     <div>
       <form>
-        <input defaultValue="Enter a word..."></input>
+        <input onChange={handleChange}></input>
         <button>Search</button>
       </form>
       <hr/>

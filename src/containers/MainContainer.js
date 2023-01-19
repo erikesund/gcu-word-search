@@ -19,7 +19,7 @@ function MainContainer () {
   return (
     <div id="main-panel">
       <div id="left-panel">
-        <Search/>
+        <Search setSearchTerm={setSearchTerm} onClick={getDefinition}/>
         <FavouriteWord/>
       </div>
       <div id="right-panel">
