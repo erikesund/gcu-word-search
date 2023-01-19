@@ -8,7 +8,7 @@ function Results ({results, addFavourite}) {
     }) 
   };
 
-  if (results === null || results === undefined) {
+  if (results === null || results === undefined) { //need something to catch word not found
     return (
       <div></div>
     )} else {
