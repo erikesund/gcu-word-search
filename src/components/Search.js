@@ -3,14 +3,19 @@ import React from "react";
 function Search({setSearchTerm, onClick}) {
 
   const handleChange = e => {
-    setSearchTerm(e.target.value)
-  }
+    setSearchTerm(e.target.value);
+  };
+
+  function handleSearchClick(e) {
+    onClick();
+    e.preventDefault();
+  };
 
   return (
     <div>
       <form>
         <input onChange={handleChange}></input>
-        <button>Search</button>
+        <button onClick={handleSearchClick}>Search</button>
       </form>
       <hr/>
     </div>
