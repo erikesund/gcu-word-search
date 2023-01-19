@@ -15,7 +15,7 @@ function MainContainer () {
 
   useEffect(() => {
     localStorage.setItem("favouritedWords", JSON.stringify(favouritedWords))
-  }, [])
+  }, [favouritedWords])
 
   async function getDefinition(){
     const url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchTerm;
@@ -26,7 +26,7 @@ function MainContainer () {
   }
 
   function addFavourite() {
-    const favouritedWordsCopy = [...favouritedWords];
+    let favouritedWordsCopy = [...favouritedWords];
     favouritedWordsCopy.push(results[0].word)
     setFavouritedWord(favouritedWordsCopy)
   }
@@ -35,7 +35,7 @@ function MainContainer () {
     <div id="main-panel">
       <div id="left-panel">
         <Search setSearchTerm={setSearchTerm} onClick={getDefinition}/>
-        <FavouriteWord/>
+        <FavouriteWord favouritedWords={favouritedWords}/>
       </div>
       <div id="right-panel">
         <Results results={results} addFavourite={addFavourite}/>

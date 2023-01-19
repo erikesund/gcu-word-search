@@ -1,8 +1,15 @@
 import React from "react";
 
-function FavouriteWord() {
+function FavouriteWord({favouritedWords}) {
+  const favouritedNodes = favouritedWords.map((word) => {
+    return <p>{word}</p>
+  })
+
   return (
-    <div>FavWord</div>
+    <div>
+      <h3>Favourite Words</h3>
+      {favouritedNodes}
+      </div>
   )
 }
 
