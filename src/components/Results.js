@@ -1,13 +1,20 @@
 import React from "react";
+import Word from "./Word";
 
-function Results ({result}) {
-  if (result === null) {
+function Results ({results}) {
+  if( results !== null) {
+    var resultNodes = results.map((result) => {
+      return <Word word={result}/>
+    }) 
+  }
+  
+  if (results === null) {
     return (
       <div>No Result</div>
     )} else {
       return (
         <div id="results-main">
-          Result
+          {resultNodes}
         </div>
       )
     }
