@@ -7,7 +7,7 @@ function Results ({results}) {
       return <Word word={result}/>
     }) 
   }
-  
+
   if (results === null) {
     return (
       <div>No Result</div>

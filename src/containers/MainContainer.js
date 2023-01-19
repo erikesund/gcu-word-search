@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import FavouriteWord from "../components/FavouriteWord";
 import Results from "../components/Results";
 import Search from "../components/Search";
@@ -7,7 +7,15 @@ function MainContainer () {
 
   const[searchTerm, setSearchTerm] = useState("");
   const[results, setResults] = useState(null);
-  const[favoritedWords, setFavouritedWord] = useState([]);
+  const[favouritedWords, setFavouritedWord] = useState(() => {
+    const savedWords = localStorage.getItem("favouritedWords");
+    const initialValue = JSON.parse(savedWords);
+    return initialValue || "";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("favouritedWords", JSON.stringify(favouritedWords))
+  }, [])
 
   async function getDefinition(){
     const url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchTerm;
