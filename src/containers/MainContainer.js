@@ -10,7 +10,7 @@ function MainContainer () {
   const[favouritedWords, setFavouritedWord] = useState(() => {
     const savedWords = localStorage.getItem("favouritedWords");
     const initialValue = JSON.parse(savedWords);
-    return initialValue || "";
+    return initialValue || [];
   });
 
   useEffect(() => {
@@ -22,7 +22,6 @@ function MainContainer () {
     const response = await fetch(url);
     const data = await response.json();
     setResults(data)
-    setSearchTerm("")
   }
 
   function addFavourite() {

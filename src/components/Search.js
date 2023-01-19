@@ -9,6 +9,7 @@ function Search({setSearchTerm, onClick}) {
   function handleSearchClick(e) {
     onClick();
     e.preventDefault();
+    e.target.value = ""
   };
 
   return (
