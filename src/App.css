@@ -14,11 +14,10 @@
   width: 20%;
   background-color: #CCE3DE;
   min-height: 100vh;
-  max-height: auto;
 }
 
 #right-panel{
-  width: 80%;
+  width: auto;
   margin-left: 1rem;
   margin-right: 1rem;
   padding-bottom: 1rem;
@@ -32,7 +31,7 @@
   font-style: italic;
 }
 
-#definition-panel {
+.definition-panel {
   background-color: #EAF4F4;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -42,6 +41,15 @@
 #search-panel {
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.results-feedback {
+  padding-top: 8rem;
+}
+
+#error {
+  text-align: left;
+  margin-left: 1rem;
 }
 
 

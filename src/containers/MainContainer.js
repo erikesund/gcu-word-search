@@ -17,10 +17,15 @@ function MainContainer () {
   }, [favouritedWords]);
 
   async function getDefinition(){
-    const url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchTerm;
-    const response = await fetch(url);
-    const data = await response.json();
-    setResults(data);
+    try {
+      const url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchTerm;
+      const response = await fetch(url);
+      const data = await response.json();
+      setResults(data);
+      console.log(data)
+    } catch(error) {
+      console.log(error)
+    }
   };
 
   function addFavourite() {

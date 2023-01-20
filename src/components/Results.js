@@ -1,24 +1,26 @@
 import React from "react";
+import Error404 from "./Error404";
 import Word from "./Word";
 
 function Results ({results, addFavourite}) {
-  if( results !== null) {
+  if (results === null) {
+    return (
+      <div className="results-feedback">Please search for a word to find a definition and add to favourites.</div>
+    )}
+     else if (results.title === "No Definitions Found"){
+      return <Error404 error={results}/>
+    } 
+    else if ( results !== null) {
     var resultNodes = results.map((result, index) => {
       return <Word word={result} key={index}/>
     }) 
-  };
-
-  if (results === null || results === undefined) { //need something to catch word not found
+    } 
     return (
-      <div></div>
-    )} else {
-      return (
-        <div id="results-main">
-          {resultNodes}
-          <button onClick={addFavourite}>Save Word</button>
-        </div>
+      <div id="results-main">
+        {resultNodes}
+        <button onClick={addFavourite}>Save Word</button>
+      </div>
       )
     };
-};
-
+  
 export default Results;

@@ -13,9 +13,9 @@ function Search({setSearchTerm, onClick}) {
 
   return (
     <div id="search-panel">
-      <h3>Look Up A Word</h3>
+      <h3>Wordsearch</h3>
       <form>
-        <input onChange={handleChange}></input>
+        <input onChange={handleChange} type="text"></input>
         <button onClick={handleSearchClick}>Search</button>
       </form>
     </div>
