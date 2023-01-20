@@ -52,4 +52,13 @@
   margin-left: 1rem;
 }
 
+#favourited-words {
+  background-color: #EAF4F4;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+}
+
 

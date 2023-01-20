@@ -2,7 +2,7 @@ import React from "react";
 
 function FavouriteWord({favouritedWords}) {
   const favouritedNodes = favouritedWords.map((word) => {
-    return <p key={word}>{word}</p>
+    return <p id="favourited-words" key={word.word}><b>{word.word}</b>: <em>{word.definition}</em></p>
   });
 
   return (

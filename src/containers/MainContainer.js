@@ -28,10 +28,17 @@ function MainContainer () {
   };
 
   function addFavourite() { //adds favorite word, function passed down to result
+    let isDuplicate;
     let favouritedWordsCopy = [...favouritedWords];
-    const isDuplicate = favouritedWords.includes(results[0].word);
+    if (favouritedWordsCopy.some(result => result.word === results[0].word)) {
+      isDuplicate = true;
+    }
     if(!isDuplicate) {
-      favouritedWordsCopy.push(results[0].word);
+      const favouriteWord = {
+        word: results[0].word,
+        definition: results[0].meanings[0].definitions[0].definition
+      };
+      favouritedWordsCopy.push(favouriteWord);
       setFavouritedWord(favouritedWordsCopy);
     };
   };
