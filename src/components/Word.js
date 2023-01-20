@@ -9,7 +9,7 @@ function Word({word}) {
     return (
         <div id="word-panel">
           <h3 id="word-text">{word.word}</h3> 
-          <p>{meaningsNodes}</p>
+          <div>{meaningsNodes}</div>
         </div>
       )
     };

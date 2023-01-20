@@ -27,7 +27,7 @@ function MainContainer () {
     }
   };
 
-  function addFavourite() { //add favorite word, passed down to result
+  function addFavourite() { //adds favorite word, function passed down to result
     let favouritedWordsCopy = [...favouritedWords];
     const isDuplicate = favouritedWords.includes(results[0].word);
     if(!isDuplicate) {

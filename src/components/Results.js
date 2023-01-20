@@ -10,7 +10,7 @@ function Results ({results, addFavourite}) {
      else if (results.title === "No Definitions Found"){ //behavior if the API returns a 404
       return <Error404 error={results}/>
     } 
-    else if ( results !== null) { //run this function if neither of the above are true.
+    else if ( results !== null) {
     var resultNodes = results.map((result, index) => {
       return <Word word={result} key={index}/>
     }) 
