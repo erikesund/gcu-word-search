@@ -4,31 +4,30 @@ import Results from "../components/Results";
 import Search from "../components/Search";
 
 function MainContainer () {
-  const[searchTerm, setSearchTerm] = useState("");
-  const[results, setResults] = useState(null);
-  const[favouritedWords, setFavouritedWord] = useState(() => {
+  const[searchTerm, setSearchTerm] = useState(""); //passed down to Search
+  const[results, setResults] = useState(null); //passed down to Results
+  const[favouritedWords, setFavouritedWord] = useState(() => { //retrieves saved words from localstorage, passed down to FavouriteWord
     const savedWords = localStorage.getItem("favouritedWords");
     const initialValue = JSON.parse(savedWords);
-    return initialValue || [];
+    return initialValue || []; // [] prevents crash if local storage is empty
   });
 
   useEffect(() => {
     localStorage.setItem("favouritedWords", JSON.stringify(favouritedWords))
-  }, [favouritedWords]);
+  }, [favouritedWords]); //saves to local storage whenever favourited words is updated
 
-  async function getDefinition(){
+  async function getDefinition(){ //api call
     try {
       const url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchTerm;
       const response = await fetch(url);
       const data = await response.json();
       setResults(data);
-      console.log(data)
-    } catch(error) {
-      console.log(error)
+    } catch(err) {
+      console.log(err);
     }
   };
 
-  function addFavourite() {
+  function addFavourite() { //add favorite word, passed down to result
     let favouritedWordsCopy = [...favouritedWords];
     const isDuplicate = favouritedWords.includes(results[0].word);
     if(!isDuplicate) {
@@ -48,6 +47,6 @@ function MainContainer () {
       </div>
     </div>
   )
-}
+};
 
 export default MainContainer;

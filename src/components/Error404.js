@@ -1,6 +1,6 @@
 import React from "react";
 
-function Error404({error}) {
+function Error404({error}) { //handles error based on object sent back by 404 on API call (word not existing).
   if(error) {
     return(
       <div id="error">
@@ -11,7 +11,7 @@ function Error404({error}) {
         </div>
       </div>
     )
-  }
-}
+  };
+};
 
 export default Error404;

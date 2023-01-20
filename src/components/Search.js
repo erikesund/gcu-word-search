@@ -1,14 +1,13 @@
 import React from "react";
 
 function Search({setSearchTerm, onClick}) {
-
   const handleChange = e => {
     setSearchTerm(e.target.value);
   };
 
   function handleSearchClick(e) {
     onClick();
-    e.preventDefault();
+    e.preventDefault(); //stops page refresh
   };
 
   return (

@@ -7,6 +7,6 @@ function Definition({definition}) {
       <p id="example-text">{definition.example}</p>
     </div>
   )
-}
+};
 
 export default Definition;
